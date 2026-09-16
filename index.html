@@ -1,118 +1,774 @@
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Merzouga Luxury Desert - Circuits, bivouacs et expériences authentiques dans le Sahara marocain.">
-  <title>Merzouga Luxury Desert | Sahara Marocain</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header class="header">
-  <a class="logo" href="#accueil">
-    <span class="logo-mark">⌁</span>
-    <span><strong>Merzouga</strong><small>LUXURY DESERT</small></span>
-  </a>
-  <button class="menu-btn" aria-label="Ouvrir le menu">☰</button>
-  <nav class="nav">
-    <a href="#accueil">Accueil</a>
-    <a href="#apropos">À propos</a>
-    <a href="#circuits">Nos circuits</a>
-    <a href="#galerie">Galerie</a>
-    <a href="#temoignages">Témoignages</a>
-    <a href="#contact">Contact</a>
-    <a class="nav-cta" href="#contact">Réserver</a>
-  </nav>
-</header>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<main>
-<section id="accueil" class="hero">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <p class="eyebrow">UNE EXPÉRIENCE INOUBLIABLE</p>
-    <h1>Découvrez le<br><span>Sahara Marocain</span><br>à Merzouga</h1>
-    <p class="hero-text">Des dunes dorées, un ciel étoilé et une culture authentique. Vivez une aventure au cœur du désert marocain.</p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="#circuits">Découvrir nos circuits <span>→</span></a>
-      <a class="btn btn-light" href="#contact">Nous contacter</a>
-    </div>
-  </div>
-  <div class="scroll">↓ &nbsp; Explorer</div>
-</section>
+<meta name="description" content="DESERT MERZOUGA - Circuits privés, bivouacs de luxe et expériences authentiques dans le Sahara marocain.">
 
-<section class="benefits">
-  <div><span>✦</span><h3>Paysages uniques</h3><p>Dunes à perte de vue et panoramas spectaculaires.</p></div>
-  <div><span>🐪</span><h3>Culture authentique</h3><p>Découvrez les traditions et l'hospitalité locales.</p></div>
-  <div><span>✓</span><h3>Sécurité & confort</h3><p>Une équipe locale à votre écoute pendant votre séjour.</p></div>
-  <div><span>♧</span><h3>Tourisme responsable</h3><p>Des expériences respectueuses du désert et des communautés.</p></div>
-</section>
+<title>DESERT MERZOUGA | Luxury Desert Tours</title>
 
-<section id="circuits" class="section">
-  <div class="section-head">
-    <div><p class="eyebrow dark">NOS CIRCUITS</p><h2>Nos expériences populaires</h2><p>Choisissez votre aventure et vivez le désert autrement.</p></div>
-    <a class="outline-link" href="#contact">Voir tous les circuits →</a>
-  </div>
-  <div class="cards">
-    <article class="card"><img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=85" alt="Dunes du Sahara"><div class="card-body"><span class="tag">2 JOURS / 1 NUIT</span><h3>Merzouga Express</h3><p>Balade à dos de dromadaire, coucher de soleil et nuit sous les étoiles.</p><strong>À partir de 1 500 DH / personne</strong><a href="#contact">Réserver →</a></div></article>
-    <article class="card"><img src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=900&q=85" alt="Camp dans le désert"><div class="card-body"><span class="tag">3 JOURS / 2 NUITS</span><h3>Expérience Sahara</h3><p>Dunes, musique berbère, feu de camp et nuits magiques.</p><strong>À partir de 2 200 DH / personne</strong><a href="#contact">Réserver →</a></div></article>
-    <article class="card"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85" alt="Aventure dans le désert"><div class="card-body"><span class="tag">4 JOURS / 3 NUITS</span><h3>Aventure 4×4</h3><p>Explorez les paysages variés du désert et les oasis cachées.</p><strong>À partir de 3 000 DH / personne</strong><a href="#contact">Réserver →</a></div></article>
-    <article class="card"><img src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=900&q=85" alt="Bivouac de luxe"><div class="card-body"><span class="tag">SUR MESURE</span><h3>Séjour privé</h3><p>Créez votre itinéraire selon vos envies, votre rythme et votre budget.</p><strong>Sur demande</strong><a href="#contact">Demander un devis →</a></div></article>
-  </div>
-</section>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<section id="apropos" class="about section">
-  <div class="about-image"><img src="https://images.unsplash.com/photo-1489493887464-892be6d1daae?auto=format&fit=crop&w=1200&q=85" alt="Village près du Sahara"></div>
-  <div class="about-text"><p class="eyebrow dark">POURQUOI NOUS CHOISIR ?</p><h2>Le désert vous attend...</h2><p>Merzouga Luxury Desert vous accompagne pour découvrir les dunes de l'Erg Chebbi et la richesse du Sud marocain à travers des expériences authentiques et soigneusement organisées.</p>
-    <ul><li>Des paysages à couper le souffle</li><li>Une gastronomie locale savoureuse</li><li>Une immersion dans la culture berbère</li><li>Une équipe locale passionnée et disponible</li></ul>
-    <a class="btn btn-primary" href="#contact">Préparer mon voyage →</a>
-  </div>
-</section>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-<section id="galerie" class="section gallery-section">
-  <div class="section-head"><div><p class="eyebrow dark">GALERIE</p><h2>Quelques souvenirs du désert</h2><p>Des moments à vivre, photographier et partager.</p></div></div>
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=85" alt="Soleil sur les dunes">
-    <img src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=900&q=85" alt="Dromadaires">
-    <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=85" alt="Désert marocain">
-    <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=85" alt="Ciel étoilé">
-    <img src="https://images.unsplash.com/photo-1489493887464-892be6d1daae?auto=format&fit=crop&w=900&q=85" alt="Oasis">
-  </div>
-</section>
+<style>
 
-<section id="temoignages" class="testimonials">
-  <div class="section-head light"><div><p class="eyebrow">TÉMOIGNAGES</p><h2>Ils ont vécu l'aventure</h2></div></div>
-  <div class="testimonial-grid">
-    <blockquote><p>“Une expérience magique ! Tout était parfaitement organisé et notre guide était formidable.”</p><strong>Sophie L.</strong><span>★★★★★</span></blockquote>
-    <blockquote><p>“Le coucher de soleil sur les dunes est tout simplement incroyable. Merci à toute l'équipe !”</p><strong>Thomas B.</strong><span>★★★★★</span></blockquote>
-    <blockquote><p>“Un voyage authentique, des gens formidables et des paysages à couper le souffle.”</p><strong>Camille D.</strong><span>★★★★★</span></blockquote>
-  </div>
-</section>
+/* =========================
+   BASE
+========================= */
 
-<section id="contact" class="contact section">
-  <div><p class="eyebrow dark">CONTACT</p><h2>Prêt à découvrir Merzouga ?</h2><p>Envoyez-nous votre demande. Nous vous répondrons rapidement pour préparer votre séjour.</p>
-    <div class="contact-info"><p>📞 +212 6 12 34 56 78</p><p>✉️ contact@merzouga-luxury-desert.com</p><p>📍 Merzouga, Maroc</p></div>
-  </div>
-  <form id="contactForm">
-    <input type="text" placeholder="Votre nom" required>
-    <input type="email" placeholder="Votre email" required>
-    <input type="tel" placeholder="Téléphone / WhatsApp">
-    <select><option>Choisissez une expérience</option><option>Merzouga Express</option><option>Expérience Sahara</option><option>Aventure 4×4</option><option>Séjour privé</option></select>
-    <textarea rows="5" placeholder="Votre message"></textarea>
-    <button class="btn btn-primary" type="submit">Envoyer ma demande →</button>
-  </form>
-</section>
-</main>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-<footer class="footer">
-  <div><div class="footer-logo">Merzouga <span>Luxury Desert</span></div><p>Plus qu'un voyage, une expérience au cœur du Sahara marocain.</p></div>
-  <div><h4>Navigation</h4><a href="#accueil">Accueil</a><a href="#apropos">À propos</a><a href="#circuits">Circuits</a><a href="#galerie">Galerie</a></div>
-  <div><h4>Contact</h4><p>+212 6 12 34 56 78</p><p>Merzouga, Maroc</p><p>contact@merzouga-luxury-desert.com</p></div>
-  <div><h4>Réseaux sociaux</h4><div class="social"><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">WhatsApp</a></div></div>
-  <div class="copyright">© 2026 Merzouga Luxury Desert. Tous droits réservés.</div>
-</footer>
-<script src="script.js"></script>
-</body>
-</html>
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    color:#29251f;
+    background:#fff;
+    line-height:1.7;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+.section{
+    padding:100px 0;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(20,17,13,.90);
+    backdrop-filter:blur(12px);
+}
+
+.nav{
+    height:82px;
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#fff;
+    margin-right:auto;
+}
+
+.logo-icon{
+    color:#d5a85a;
+    font-size:28px;
+}
+
+.logo strong{
+    display:block;
+    font-family:"Playfair Display",serif;
+    font-size:20px;
+    letter-spacing:2px;
+}
+
+.logo small{
+    display:block;
+    font-size:9px;
+    letter-spacing:4px;
+    color:#d5a85a;
+}
+
+.navigation{
+    display:flex;
+    gap:24px;
+}
+
+.navigation a{
+    color:#fff;
+    font-size:14px;
+    transition:.3s;
+}
+
+.navigation a:hover{
+    color:#d5a85a;
+}
+
+.nav-whatsapp{
+    background:#d5a85a;
+    color:#17130e;
+    padding:10px 18px;
+    border-radius:30px;
+    font-weight:700;
+    font-size:13px;
+}
+
+.menu-toggle{
+    display:none;
+    border:0;
+    background:none;
+    color:#fff;
+    font-size:28px;
+    cursor:pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+
+    background:
+    url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2000&q=85")
+    center/cover;
+
+    display:flex;
+    align-items:center;
+}
+
+.hero:after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(15,12,8,.82),
+        rgba(15,12,8,.28)
+    );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    color:#fff;
+    max-width:850px;
+    padding-top:80px;
+}
+
+.hero-small{
+    color:#e0b56a;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:4px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(45px,7vw,86px);
+    line-height:1.05;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    display:block;
+    color:#e0b56a;
+}
+
+.hero-text{
+    max-width:680px;
+    font-size:18px;
+    color:rgba(255,255,255,.88);
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    margin-top:35px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn{
+    display:inline-block;
+    padding:14px 25px;
+    border-radius:3px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#d5a85a;
+    color:#17130e;
+}
+
+.btn-primary:hover{
+    background:#fff;
+    transform:translateY(-2px);
+}
+
+.btn-outline{
+    border:1px solid rgba(255,255,255,.7);
+    color:#fff;
+}
+
+.btn-outline:hover{
+    background:#fff;
+    color:#222;
+}
+
+.btn-dark{
+    background:#29251f;
+    color:#fff;
+}
+
+
+/* =========================
+   TITRES
+========================= */
+
+.section-label{
+    color:#a77834;
+    font-weight:700;
+    letter-spacing:3px;
+    font-size:12px;
+    margin-bottom:15px;
+}
+
+.section-heading{
+    max-width:700px;
+    margin-bottom:50px;
+}
+
+.section-heading h2,
+.intro h2,
+.about h2,
+.contact h2,
+.camp-content h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(35px,5vw,55px);
+    line-height:1.15;
+    margin-bottom:20px;
+}
+
+.section-heading p{
+    color:#6f695f;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+    background:#f5f0e8;
+}
+
+.intro-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:100px;
+    align-items:center;
+}
+
+.intro-grid p:not(.section-label){
+    color:#655f56;
+    margin-bottom:15px;
+}
+
+
+/* =========================
+   CIRCUITS
+========================= */
+
+.circuits{
+    background:#fff;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+.card{
+    background:#fff;
+    border:1px solid #eee7dd;
+    overflow:hidden;
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 20px 50px rgba(0,0,0,.1);
+}
+
+.card-image{
+    height:280px;
+    background-size:cover;
+    background-position:center;
+    position:relative;
+}
+
+.card-image span{
+    position:absolute;
+    top:20px;
+    left:20px;
+    background:#fff;
+    padding:7px 12px;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.image1{
+    background-image:url("https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=1200&q=80");
+}
+
+.image2{
+    background-image:url("https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80");
+}
+
+.image3{
+    background-image:url("https://images.unsplash.com/photo-1579606032821-4e6161c814b3?auto=format&fit=crop&w=1200&q=80");
+}
+
+.image4{
+    background-image:url("https://images.unsplash.com/photo-1470214304380-aadaedcfff1b?auto=format&fit=crop&w=1200&q=80");
+}
+
+.card-content{
+    padding:28px;
+}
+
+.card-location{
+    color:#a77834;
+    font-size:13px;
+    font-weight:700;
+}
+
+.card h3{
+    font-family:"Playfair Display",serif;
+    font-size:28px;
+    margin:8px 0 12px;
+}
+
+.card-content > p:not(.card-location){
+    color:#706a61;
+}
+
+.card-info{
+    display:flex;
+    gap:20px;
+    margin:20px 0;
+    font-size:13px;
+    font-weight:700;
+}
+
+.card-link{
+    color:#9b6b2c;
+    font-weight:700;
+}
+
+
+/* =========================
+   EXPERIENCES
+========================= */
+
+.experiences{
+    background:#f5f0e8;
+}
+
+.experience-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.experience{
+    background:#fff;
+    padding:35px 25px;
+}
+
+.experience-icon{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.experience h3{
+    font-family:"Playfair Display",serif;
+    font-size:23px;
+    margin-bottom:10px;
+}
+
+.experience p{
+    color:#6d675e;
+    font-size:14px;
+}
+
+
+/* =========================
+   CAMP
+========================= */
+
+.luxury-camp{
+    position:relative;
+    min-height:650px;
+
+    background:
+    url("https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=2000&q=85")
+    center/cover;
+
+    display:flex;
+    align-items:center;
+}
+
+.luxury-camp:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(15,10,5,.55);
+}
+
+.camp-content{
+    position:relative;
+    z-index:2;
+    color:#fff;
+    max-width:700px;
+}
+
+.camp-content p:not(.section-label){
+    color:rgba(255,255,255,.85);
+    margin-bottom:30px;
+}
+
+
+/* =========================
+   WHY
+========================= */
+
+.why{
+    background:#fff;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.why-grid > div{
+    border-top:1px solid #d8cfc2;
+    padding-top:20px;
+}
+
+.why-grid strong{
+    color:#b28545;
+    font-size:14px;
+}
+
+.why-grid h3{
+    margin:10px 0;
+    font-family:"Playfair Display",serif;
+    font-size:22px;
+}
+
+.why-grid p{
+    color:#706a61;
+    font-size:14px;
+}
+
+
+/* =========================
+   GALERIE
+========================= */
+
+.gallery-section{
+    background:#f7f3ed;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-auto-rows:230px;
+    gap:15px;
+}
+
+.gallery-item{
+    background-size:cover;
+    background-position:center;
+}
+
+.gallery1{
+    background-image:url("https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1000&q=80");
+}
+
+.gallery2{
+    background-image:url("https://images.unsplash.com/photo-1524498250077-390f9e378fc0?auto=format&fit=crop&w=1000&q=80");
+}
+
+.gallery3{
+    background-image:url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=80");
+}
+
+.gallery4{
+    background-image:url("https://images.unsplash.com/photo-1470214304380-aadaedcfff1b?auto=format&fit=crop&w=1000&q=80");
+}
+
+.gallery5{
+    background-image:url("https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=1000&q=80");
+}
+
+.gallery6{
+    background-image:url("https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=80");
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    background:#f5f0e8;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:center;
+}
+
+.about-image{
+    min-height:520px;
+
+    background:
+    url("https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=1200&q=80")
+    center/cover;
+}
+
+.about-text p:not(.section-label){
+    color:#69635a;
+    margin-bottom:18px;
+}
+
+
+/* =========================
+   FAQ
+========================= */
+
+.faq-list{
+    max-width:850px;
+}
+
+.faq details{
+    border-bottom:1px solid #ddd5ca;
+    padding:20px 0;
+}
+
+.faq summary{
+    cursor:pointer;
+    font-weight:700;
+    font-size:17px;
+}
+
+.faq details p{
+    color:#6e685f;
+    padding-top:12px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    background:#29251f;
+    color:#fff;
+    padding:90px 0;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:center;
+}
+
+.contact h2{
+    color:#fff;
+}
+
+.contact p:not(.section-label){
+    color:#c8c0b5;
+}
+
+.contact-box{
+    display:flex;
+    flex-direction:column;
+}
+
+.contact-box a{
+    border-bottom:1px solid rgba(255,255,255,.2);
+    padding:20px 0;
+}
+
+.contact-box span{
+    display:block;
+    color:#d5a85a;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.contact-box strong{
+    font-size:18px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    background:#171510;
+    color:#fff;
+    padding:60px 0 0;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:50px;
+}
+
+.footer-logo{
+    font-family:"Playfair Display",serif;
+    font-size:25px;
+}
+
+.footer p{
+    color:#8e887e;
+}
+
+.footer h4{
+    margin-bottom:15px;
+}
+
+.footer-grid a:not(.footer-logo){
+    display:block;
+    color:#aaa399;
+    margin-bottom:8px;
+    font-size:14px;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.1);
+    margin-top:45px;
+    padding:20px 0;
+    text-align:center;
+    font-size:12px;
+}
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp-float{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    z-index:999;
+
+    background:#25d366;
+    color:#fff;
+
+    padding:13px 20px;
+    border-radius:30px;
+
+    font-weight:700;
+    font-size:14px;
+
+    box-shadow:0 8px 30px rgba(0,0,0,.25);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+    .navigation{
+        display:none;
+
+        position:absolute;
+        top:82px;
+        left:0;
+        width:100%;
+
+        background:#211d17;
+
+        padding:25px;
+
+        flex-direction:column;
+    }
+
+    .navigation.active{
+        display:flex;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-whatsapp{
+        display:none;
+    }
+
+    .intro-grid,
+    .about-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .experience-grid,
+    .why-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .gallery{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+
+@media(max-width:600px){
+
+   
+```
