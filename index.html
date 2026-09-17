@@ -118,14 +118,53 @@
 .card-link { color: var(--primary); font-size: 0.9rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
 .card-link:hover { color: var(--accent); }
 
-    /* EXPERIENCES */
-    .experience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
-    .experience { background-color: var(--bg-surface); padding: 35px 25px; border-radius: 10px; border: 1px solid var(--border-color); text-align: center; transition: var(--transition); box-shadow: var(--shadow-sm); }
-    .experience:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: var(--shadow-md); }
-    .experience-icon { font-size: 2.6rem; margin-bottom: 16px; display: block; }
-    .experience h3 { font-family: var(--font-title); font-size: 1.25rem; margin-bottom: 10px; color: var(--primary); }
-    .experience p { color: var(--text-muted); font-size: 0.9rem; }
+   <!-- Section Expériences -->
+    <section id="experiences" class="experiences-section">
+        <h2>Expériences Authentiques</h2>
+        <div class="experience-grid">
 
+            <div class="experience">
+                <div class="exp-image exp-img1"></div>
+                <span class="experience-icon">🐪</span>
+                <h3>Méharée à Dromadaire</h3>
+                <p>Silencieuse caravane au soleil couchant jusqu'au cœur de l'Erg Chebbi.</p>
+            </div>
+
+            <div class="experience">
+                <div class="exp-image exp-img2"></div>
+                <span class="experience-icon">✨</span>
+                <h3>Nuit Sous les Étoiles</h3>
+                <p>Soirée bivouac au rythme de la musique Gnaoua et de la gastronomie locale.</p>
+            </div>
+
+            <div class="experience">
+                <div class="exp-image exp-img3"></div>
+                <span class="experience-icon">🌅</span>
+                <h3>Lever de Soleil sur les Dunes</h3>
+                <p>Contemplez les nuances dorées du Sahara au réveil depuis la plus haute dune.</p>
+            </div>
+
+            <div class="experience">
+                <div class="exp-image exp-img4"></div>
+                <span class="experience-icon">🏕️</span>
+                <h3>Bivouac de Luxe</h3>
+                <p>Tentes sahariennes haut de gamme équipées avec tout le confort moderne.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Galerie Photo (Répétition visuelle de vos 5 images) -->
+    <section class="gallery-section">
+        <h2>Galerie Photos</h2>
+        <div class="gallery-grid">
+            <img src="SAHA.jpg" alt="Désert Merzouga" class="gallery-img">
+            <img src="CIRCUIT.jpg" alt="Circuit 4x4 Désert" class="gallery-img">
+            <img src="ERG.jpg" alt="Dunes Erg Chebbi" class="gallery-img">
+            <img src="CIEL.jpg" alt="Ciel étoilé Sahara" class="gallery-img">
+            <img src="HOTEL.jpg" alt="Bivouac Hôtel" class="gallery-img">
+        </div>
+    </section>
     /* CAMP LUXE BIVOUAC (SECTION SOMBRE CHIC) */
     .luxury-camp { position: relative; padding: 120px 0; background: url('https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1920&q=80') center/cover fixed no-repeat; text-align: center; color: #FFF; }
     .camp-overlay { position: absolute; inset: 0; background: rgba(15, 23, 42, 0.85); }
