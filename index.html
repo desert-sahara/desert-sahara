@@ -118,53 +118,30 @@
 .card-link { color: var(--primary); font-size: 0.9rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
 .card-link:hover { color: var(--accent); }
 
-   <!-- Section Expériences -->
-    <section id="experiences" class="experiences-section">
-        <h2>Expériences Authentiques</h2>
-        <div class="experience-grid">
+ /* EXPERIENCES (ERG.jpg, CIEL.jpg, SAHA.jpg, HOTEL.jpg) */
+    .experience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; }
+    .experience { background-color: #fff; padding: 25px; border-radius: 8px; border: 1px solid var(--border-color); text-align: center; transition: var(--transition); }
+    .experience:hover { border-color: var(--accent); transform: translateY(-5px); }
+    
+    .exp-image { height: 160px; background-size: cover; background-position: center; border-radius: 6px; margin-bottom: 15px; }
+    .exp-img1 { background-image: url('ERG.jpg'); }
+    .exp-img2 { background-image: url('CIEL.jpg'); }
+    .exp-img3 { background-image: url('SAHA.jpg'); }
+    .exp-img4 { background-image: url('HOTEL.jpg'); }
 
-            <div class="experience">
-                <div class="exp-image exp-img1"></div>
-                <span class="experience-icon">🐪</span>
-                <h3>Méharée à Dromadaire</h3>
-                <p>Silencieuse caravane au soleil couchant jusqu'au cœur de l'Erg Chebbi.</p>
-            </div>
+    .experience-icon { font-size: 2rem; margin-bottom: 10px; display: block; }
+    .experience h3 { font-family: var(--font-title); font-size: 1.2rem; color: var(--indigo); margin-bottom: 8px; }
+    .experience p { color: var(--text-muted); font-size: 0.85rem; }
 
-            <div class="experience">
-                <div class="exp-image exp-img2"></div>
-                <span class="experience-icon">✨</span>
-                <h3>Nuit Sous les Étoiles</h3>
-                <p>Soirée bivouac au rythme de la musique Gnaoua et de la gastronomie locale.</p>
-            </div>
-
-            <div class="experience">
-                <div class="exp-image exp-img3"></div>
-                <span class="experience-icon">🌅</span>
-                <h3>Lever de Soleil sur les Dunes</h3>
-                <p>Contemplez les nuances dorées du Sahara au réveil depuis la plus haute dune.</p>
-            </div>
-
-            <div class="experience">
-                <div class="exp-image exp-img4"></div>
-                <span class="experience-icon">🏕️</span>
-                <h3>Bivouac de Luxe</h3>
-                <p>Tentes sahariennes haut de gamme équipées avec tout le confort moderne.</p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Galerie Photo (Répétition visuelle de vos 5 images) -->
-    <section class="gallery-section">
-        <h2>Galerie Photos</h2>
-        <div class="gallery-grid">
-            <img src="SAHA.jpg" alt="Désert Merzouga" class="gallery-img">
-            <img src="CIRCUIT.jpg" alt="Circuit 4x4 Désert" class="gallery-img">
-            <img src="ERG.jpg" alt="Dunes Erg Chebbi" class="gallery-img">
-            <img src="CIEL.jpg" alt="Ciel étoilé Sahara" class="gallery-img">
-            <img src="HOTEL.jpg" alt="Bivouac Hôtel" class="gallery-img">
-        </div>
-    </section>
+    /* GALERIE PHOTO */
+    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px; }
+    .gallery-item { height: 200px; background-size: cover; background-position: center; border-radius: 6px; transition: var(--transition); }
+    .gallery-item:hover { opacity: 0.9; transform: scale(1.02); }
+    .gal-1 { background-image: url('SAHA.jpg'); }
+    .gal-2 { background-image: url('CIRCUIT.jpg'); }
+    .gal-3 { background-image: url('ERG.jpg'); }
+    .gal-4 { background-image: url('CIEL.jpg'); }
+    .gal-5 { background-image: url('HOTEL.jpg'); }
     /* CAMP LUXE BIVOUAC (SECTION SOMBRE CHIC) */
     .luxury-camp { position: relative; padding: 120px 0; background: url('https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1920&q=80') center/cover fixed no-repeat; text-align: center; color: #FFF; }
     .camp-overlay { position: absolute; inset: 0; background: rgba(15, 23, 42, 0.85); }
