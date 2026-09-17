@@ -12,114 +12,125 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
 
   <style>
-    /* ================= STYLES GLOBAUX & DESIGN LUXE ================= */
+    /* ================= PALETTE DE COULEURS SUB LIME & LUXE ================= */
     :root {
-      --primary: #c59d5f;
-      --primary-hover: #b0884a;
-      --dark: #121212;
-      --dark-surface: #1e1e1e;
-      --text-light: #f5f5f5;
-      --text-muted: #a0a0a0;
-      --border-color: #2a2a2a;
+      --primary: #D4AF37;           /* Or Imperial / Sable Chaud */
+      --primary-hover: #F3E5AB;     /* Or Clair au survol */
+      --accent: #E07A5F;            /* Terracotta / Ocre du désert */
+      --accent-hover: #f28b6d;
+      
+      --dark: #0B0C10;              /* Noir Nuit Saharienne Profond */
+      --dark-surface: #151821;      /* Gris Anthracite Nuit pour Cartes/Cartouches */
+      --dark-card: #1C202B;         /* Surface de carte contrastée */
+      
+      --text-light: #FFFFFF;        /* Blanc Pur pour Titres/Chapeaux */
+      --text-muted: #CBD5E1;        /* Gris Clair très lisible pour le texte long */
+      --border-color: #2D3548;      /* Bordure subtile bleu nuit/anthracite */
+      --border-gold: rgba(212, 175, 55, 0.4);
+      
       --font-title: 'Playfair Display', serif;
       --font-body: 'DM Sans', sans-serif;
-      --transition: all 0.3s ease;
+      --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: var(--font-body); background-color: var(--dark); color: var(--text-light); line-height: 1.6; }
+    body { font-family: var(--font-body); background-color: var(--dark); color: var(--text-light); line-height: 1.7; font-size: 16px; }
     a { text-decoration: none; color: inherit; transition: var(--transition); }
 
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    .section { padding: 90px 0; }
-    .section-label { color: var(--primary); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 10px; }
-    .section-heading { text-align: center; margin-bottom: 50px; }
-    .section-heading h2 { font-family: var(--font-title); font-size: 2.8rem; margin-bottom: 15px; }
-    .section-heading p { color: var(--text-muted); max-width: 600px; margin: 0 auto; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 100px 0; }
+    .section-label { color: var(--primary); font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; margin-bottom: 12px; display: inline-block; }
+    .section-heading { text-align: center; margin-bottom: 60px; }
+    .section-heading h2 { font-family: var(--font-title); font-size: 3rem; margin-bottom: 18px; color: #FFF; }
+    .section-heading p { color: var(--text-muted); max-width: 640px; margin: 0 auto; font-size: 1.05rem; }
 
-    /* BOUTONS */
-    .btn { display: inline-block; padding: 14px 28px; border-radius: 4px; font-weight: 600; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; border: 1px solid transparent; transition: var(--transition); }
-    .btn-primary { background-color: var(--primary); color: #000; }
-    .btn-primary:hover { background-color: #fff; color: #000; }
-    .btn-outline { border-color: #fff; color: #fff; }
-    .btn-outline:hover { background-color: #fff; color: #000; }
-    .btn-dark { background-color: var(--dark-surface); color: #fff; border-color: var(--border-color); }
-    .btn-dark:hover { border-color: var(--primary); color: var(--primary); }
+    /* BOUTONS HAUTE DÉFINITION */
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 15px 32px; border-radius: 4px; font-weight: 700; font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; border: 1px solid transparent; transition: var(--transition); box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), #B8860B); color: #000; font-weight: 800; }
+    .btn-primary:hover { background: linear-gradient(135deg, #FFF, var(--primary-hover)); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4); }
+    .btn-accent { background: linear-gradient(135deg, var(--accent), #C05638); color: #FFF; }
+    .btn-accent:hover { background: linear-gradient(135deg, var(--accent-hover), var(--accent)); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(224, 122, 95, 0.4); }
+    .btn-outline { border-color: var(--primary); color: var(--primary); background: transparent; }
+    .btn-outline:hover { background-color: var(--primary); color: #000; transform: translateY(-2px); }
+    .btn-dark { background-color: var(--dark-card); color: #FFF; border: 1px solid var(--border-color); }
+    .btn-dark:hover { border-color: var(--primary); color: var(--primary); background-color: var(--dark-surface); }
 
-    /* HEADER */
-    .header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent); transition: var(--transition); }
-    .header.scrolled { background-color: rgba(18, 18, 18, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); }
-    .nav { display: flex; justify-content: space-between; align-items: center; height: 80px; }
-    .logo { display: flex; align-items: center; gap: 10px; }
-    .logo-icon { color: var(--primary); font-size: 1.2rem; }
-    .logo strong { display: block; font-size: 1.1rem; letter-spacing: 1px; }
-    .logo small { display: block; font-size: 0.65rem; color: var(--text-muted); letter-spacing: 2px; }
-    .navigation { display: flex; gap: 25px; }
-    .navigation a { font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; color: #ddd; }
+    /* HEADER EN-TÊTE */
+    .header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: linear-gradient(to bottom, rgba(11,12,16,0.95), rgba(11,12,16,0)); transition: var(--transition); }
+    .header.scrolled { background-color: rgba(11, 12, 16, 0.98); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    .nav { display: flex; justify-content: space-between; align-items: center; height: 90px; }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo-icon { color: var(--primary); font-size: 1.4rem; text-shadow: 0 0 10px rgba(212, 175, 55, 0.5); }
+    .logo strong { display: block; font-size: 1.25rem; letter-spacing: 2px; color: #FFF; font-family: var(--font-title); }
+    .logo small { display: block; font-size: 0.65rem; color: var(--primary); letter-spacing: 3px; font-weight: 700; }
+    .navigation { display: flex; gap: 28px; }
+    .navigation a { font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); font-weight: 500; }
     .navigation a:hover { color: var(--primary); }
-    .nav-whatsapp { background-color: #25d366; color: #fff; padding: 8px 18px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
-    .nav-whatsapp:hover { opacity: 0.9; }
-    .menu-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.8rem; cursor: pointer; }
+    .nav-whatsapp { background-color: #25d366; color: #fff; padding: 10px 22px; border-radius: 30px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.5px; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3); }
+    .nav-whatsapp:hover { background-color: #20ba5a; transform: scale(1.03); }
+    .menu-toggle { display: none; background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer; }
 
-    /* HERO */
-    .hero { position: relative; height: 100vh; display: flex; align-items: center; background: url('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; }
-    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(18,18,18,0.9)); }
-    .hero-content { position: relative; z-index: 2; text-align: center; max-width: 800px; }
-    .hero-small { color: var(--primary); letter-spacing: 3px; font-size: 0.85rem; font-weight: 600; margin-bottom: 15px; }
-    .hero h1 { font-family: var(--font-title); font-size: 3.8rem; line-height: 1.2; margin-bottom: 20px; }
-    .hero h1 span { display: block; color: var(--primary); }
-    .hero-text { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 35px; }
-    .hero-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+    /* HERO SECTION */
+    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; background: url('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; padding-top: 90px; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,12,16,0.5) 0%, rgba(11,12,16,0.85) 75%, var(--dark) 100%); }
+    .hero-content { position: relative; z-index: 2; text-align: center; max-width: 860px; }
+    .hero-small { color: var(--primary); letter-spacing: 4px; font-size: 0.85rem; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; }
+    .hero h1 { font-family: var(--font-title); font-size: 4.2rem; line-height: 1.15; margin-bottom: 25px; color: #FFF; text-shadow: 0 4px 20px rgba(0,0,0,0.8); }
+    .hero h1 span { color: var(--primary); background: linear-gradient(135deg, #FFF, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-text { color: var(--text-muted); font-size: 1.2rem; margin-bottom: 40px; font-weight: 400; max-width: 720px; margin-left: auto; margin-right: auto; }
+    .hero-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
 
     /* INTRO & SECTION ABOUT */
-    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-    .intro h2 { font-family: var(--font-title); font-size: 2.5rem; }
-    .intro p { color: var(--text-muted); margin-bottom: 15px; }
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .intro h2 { font-family: var(--font-title); font-size: 2.8rem; line-height: 1.2; color: #FFF; }
+    .intro p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 20px; }
 
-    /* CIRCUITS CARDS */
-    .circuits { background-color: var(--dark-surface); }
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
-    .card { background-color: var(--dark); border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; transition: var(--transition); }
-    .card:hover { transform: translateY(-8px); border-color: var(--primary); }
-    .card-image { height: 200px; background-size: cover; background-position: center; position: relative; padding: 15px; }
-    .card-image span { background-color: rgba(0,0,0,0.7); color: var(--primary); padding: 4px 10px; font-size: 0.7rem; font-weight: 700; border-radius: 2px; letter-spacing: 1px; }
+    /* CIRCUITS CARDS (CONTRASTE ACCENTUÉ) */
+    .circuits { background-color: var(--dark-surface); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 30px; }
+    .card { background-color: var(--dark-card); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; transition: var(--transition); display: flex; flex-direction: column; }
+    .card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 15px 35px rgba(0,0,0,0.6); }
+    .card-image { height: 230px; background-size: cover; background-position: center; position: relative; padding: 20px; }
+    .card-image span { background: rgba(11, 12, 16, 0.85); color: var(--primary); padding: 6px 14px; font-size: 0.75rem; font-weight: 800; border-radius: 4px; letter-spacing: 1.5px; border: 1px solid var(--border-gold); backdrop-filter: blur(4px); }
     .image1 { background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80'); }
     .image2 { background-image: url('https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=800&q=80'); }
     .image3 { background-image: url('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80'); }
     .image4 { background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80'); }
-    .card-content { padding: 25px; }
-    .card-location { color: var(--primary); font-size: 0.75rem; letter-spacing: 1px; margin-bottom: 5px; }
-    .card h3 { font-family: var(--font-title); font-size: 1.4rem; margin-bottom: 10px; }
-    .card p { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 20px; }
-    .card-info { display: flex; gap: 15px; border-top: 1px solid var(--border-color); padding-top: 15px; margin-bottom: 15px; font-size: 0.8rem; color: var(--text-muted); }
-    .card-link { color: var(--primary); font-size: 0.85rem; font-weight: 600; cursor: pointer; }
+    .card-content { padding: 30px; display: flex; flex-direction: column; flex-grow: 1; }
+    .card-location { color: var(--accent); font-size: 0.8rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
+    .card h3 { font-family: var(--font-title); font-size: 1.5rem; margin-bottom: 12px; color: #FFF; }
+    .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px; flex-grow: 1; }
+    .card-info { display: flex; gap: 20px; border-top: 1px solid var(--border-color); padding-top: 18px; margin-bottom: 20px; font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
+    .card-link { color: var(--primary); font-size: 0.9rem; font-weight: 700; cursor: pointer; letter-spacing: 1px; display: inline-flex; align-items: center; gap: 8px; }
+    .card-link:hover { color: #FFF; text-shadow: 0 0 10px rgba(212, 175, 55, 0.6); }
 
     /* EXPERIENCES */
-    .experience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; }
-    .experience { background-color: var(--dark-surface); padding: 30px; border-radius: 6px; border: 1px solid var(--border-color); text-align: center; transition: var(--transition); }
-    .experience:hover { border-color: var(--primary); }
-    .experience-icon { font-size: 2.5rem; margin-bottom: 15px; }
-    .experience h3 { font-family: var(--font-title); font-size: 1.2rem; margin-bottom: 10px; }
-    .experience p { color: var(--text-muted); font-size: 0.85rem; }
+    .experience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; }
+    .experience { background-color: var(--dark-surface); padding: 40px 25px; border-radius: 8px; border: 1px solid var(--border-color); text-align: center; transition: var(--transition); }
+    .experience:hover { border-color: var(--primary); transform: translateY(-5px); background-color: var(--dark-card); }
+    .experience-icon { font-size: 3rem; margin-bottom: 20px; display: block; }
+    .experience h3 { font-family: var(--font-title); font-size: 1.35rem; margin-bottom: 12px; color: #FFF; }
+    .experience p { color: var(--text-muted); font-size: 0.9rem; }
 
-    /* CAMP */
-    .luxury-camp { position: relative; padding: 120px 0; background: url('https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1920&q=80') center/cover fixed no-repeat; text-align: center; }
-    .camp-overlay { position: absolute; inset: 0; background-color: rgba(0,0,0,0.7); }
-    .camp-content { position: relative; z-index: 2; max-width: 600px; }
-    .camp-content h2 { font-family: var(--font-title); font-size: 3rem; margin-bottom: 15px; }
-    .camp-content p { color: var(--text-light); margin-bottom: 30px; }
+    /* CAMP LUXE BIVOUAC */
+    .luxury-camp { position: relative; padding: 140px 0; background: url('https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1920&q=80') center/cover fixed no-repeat; text-align: center; }
+    .camp-overlay { position: absolute; inset: 0; background: rgba(11, 12, 16, 0.82); }
+    .camp-content { position: relative; z-index: 2; max-width: 680px; margin: 0 auto; }
+    .camp-content h2 { font-family: var(--font-title); font-size: 3.2rem; margin-bottom: 20px; color: #FFF; }
+    .camp-content p { color: var(--text-muted); font-size: 1.15rem; margin-bottom: 35px; }
 
     /* POURQUOI NOUS */
-    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; }
-    .why-grid strong { display: block; font-size: 2rem; color: var(--primary); font-family: var(--font-title); margin-bottom: 10px; }
-    .why-grid h3 { font-size: 1.1rem; margin-bottom: 8px; }
-    .why-grid p { color: var(--text-muted); font-size: 0.85rem; }
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 30px; }
+    .why-grid-item { background-color: var(--dark-surface); padding: 35px; border-radius: 8px; border: 1px solid var(--border-color); }
+    .why-grid strong { display: block; font-size: 2.5rem; color: var(--primary); font-family: var(--font-title); margin-bottom: 12px; }
+    .why-grid h3 { font-size: 1.2rem; margin-bottom: 10px; color: #FFF; }
+    .why-grid p { color: var(--text-muted); font-size: 0.9rem; }
 
     /* GALERIE */
-    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; }
-    .gallery-item { height: 220px; background-size: cover; background-position: center; border-radius: 4px; transition: var(--transition); }
-    .gallery-item:hover { opacity: 0.85; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    .gallery-item { height: 260px; background-size: cover; background-position: center; border-radius: 8px; transition: var(--transition); border: 1px solid var(--border-color); }
+    .gallery-item:hover { transform: scale(1.02); border-color: var(--primary); box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
     .gallery1 { background-image: url('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=600&q=80'); }
     .gallery2 { background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80'); }
     .gallery3 { background-image: url('https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=600&q=80'); }
@@ -128,57 +139,71 @@
     .gallery6 { background-image: url('https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=600&q=80'); }
 
     /* A PROPOS & FAQ */
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-    .about-image { height: 380px; background: url('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80') center/cover no-repeat; border-radius: 6px; }
-    .about-text h2 { font-family: var(--font-title); font-size: 2.5rem; margin-bottom: 20px; }
-    .about-text p { color: var(--text-muted); margin-bottom: 15px; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about-image { height: 420px; background: url('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80') center/cover no-repeat; border-radius: 8px; border: 1px solid var(--border-gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    .about-text h2 { font-family: var(--font-title); font-size: 2.8rem; margin-bottom: 25px; color: #FFF; }
+    .about-text p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 20px; }
 
-    .faq-list { max-width: 800px; margin: 0 auto; }
-    details { background-color: var(--dark-surface); border: 1px solid var(--border-color); padding: 20px; border-radius: 6px; margin-bottom: 15px; }
-    summary { font-weight: 600; cursor: pointer; }
-    details p { color: var(--text-muted); font-size: 0.9rem; margin-top: 10px; }
+    .faq-list { max-width: 850px; margin: 0 auto; }
+    details { background-color: var(--dark-surface); border: 1px solid var(--border-color); padding: 22px 28px; border-radius: 8px; margin-bottom: 18px; transition: var(--transition); }
+    details[open] { border-color: var(--primary); background-color: var(--dark-card); }
+    summary { font-weight: 700; cursor: pointer; font-size: 1.1rem; color: #FFF; outline: none; display: flex; justify-content: space-between; align-items: center; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "＋"; color: var(--primary); font-size: 1.3rem; }
+    details[open] summary::after { content: "－"; }
+    details p { color: var(--text-muted); font-size: 0.98rem; margin-top: 15px; line-height: 1.6; border-top: 1px solid var(--border-color); padding-top: 15px; }
 
     /* CONTACT & FOOTER */
-    .contact { background-color: var(--dark-surface); padding: 80px 0; }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .contact { background-color: var(--dark-surface); padding: 100px 0; border-top: 1px solid var(--border-color); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .contact h2 { font-family: var(--font-title); font-size: 2.8rem; margin-bottom: 20px; color: #FFF; }
+    .contact p { color: var(--text-muted); font-size: 1.1rem; }
     .contact-box { display: flex; flex-direction: column; gap: 20px; }
-    .contact-box a { background-color: var(--dark); border: 1px solid var(--border-color); padding: 20px; border-radius: 6px; display: flex; flex-direction: column; }
-    .contact-box span { color: var(--text-muted); font-size: 0.8rem; }
-    .contact-box strong { color: var(--primary); font-size: 1.1rem; }
+    .contact-box a { background-color: var(--dark-card); border: 1px solid var(--border-color); padding: 25px 30px; border-radius: 8px; display: flex; flex-direction: column; transition: var(--transition); }
+    .contact-box a:hover { border-color: var(--primary); transform: translateX(8px); background-color: var(--dark); }
+    .contact-box span { color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; margin-bottom: 5px; }
+    .contact-box strong { color: var(--primary); font-size: 1.25rem; font-family: var(--font-title); }
 
-    .footer { border-top: 1px solid var(--border-color); padding: 60px 0 20px 0; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-    .footer-logo { font-family: var(--font-title); font-size: 1.3rem; color: var(--primary); }
-    .footer h4 { margin-bottom: 15px; font-size: 0.9rem; letter-spacing: 1px; }
-    .footer a { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 8px; }
-    .footer-bottom { text-align: center; border-top: 1px solid var(--border-color); padding-top: 20px; color: var(--text-muted); font-size: 0.8rem; }
+    .footer { border-top: 1px solid var(--border-color); padding: 80px 0 30px 0; background-color: var(--dark); }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; margin-bottom: 50px; }
+    .footer-logo { font-family: var(--font-title); font-size: 1.5rem; color: var(--primary); letter-spacing: 2px; }
+    .footer h4 { margin-bottom: 20px; font-size: 0.95rem; letter-spacing: 2px; text-transform: uppercase; color: #FFF; }
+    .footer a { display: block; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px; }
+    .footer a:hover { color: var(--primary); }
+    .footer-bottom { text-align: center; border-top: 1px solid var(--border-color); padding-top: 30px; color: var(--text-muted); font-size: 0.85rem; }
 
-    /* WHATSAPP FLOAT */
-    .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background-color: #25d366; color: #fff; padding: 12px 22px; border-radius: 30px; font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.4); z-index: 999; }
+    /* WHATSAPP BOUTON FLOTTANT */
+    .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: #fff; padding: 14px 26px; border-radius: 50px; font-weight: 700; box-shadow: 0 10px 25px rgba(37,211,102,0.4); z-index: 999; display: flex; align-items: center; gap: 10px; font-size: 0.95rem; transition: var(--transition); }
+    .whatsapp-float:hover { transform: scale(1.05); background-color: #20ba5a; box-shadow: 0 15px 30px rgba(37,211,102,0.6); }
 
-    /* ================= MODALE DES DÉTAILS DU CIRCUIT ================= */
-    .modal { display: none; position: fixed; inset: 0; z-index: 2000; background-color: rgba(0,0,0,0.85); backdrop-filter: blur(8px); overflow-y: auto; padding: 40px 20px; }
-    .modal-content { background-color: var(--dark-surface); border: 1px solid var(--border-color); max-width: 900px; margin: 40px auto; border-radius: 8px; padding: 40px; position: relative; }
-    .close-modal { position: absolute; top: 20px; right: 25px; color: var(--text-muted); font-size: 2rem; cursor: pointer; transition: var(--transition); }
+    /* MODALE DES DETAILS DU CIRCUIT */
+    .modal { display: none; position: fixed; inset: 0; z-index: 2000; background-color: rgba(0,0,0,0.9); backdrop-filter: blur(10px); overflow-y: auto; padding: 40px 20px; }
+    .modal-content { background-color: var(--dark-surface); border: 1px solid var(--border-gold); max-width: 900px; margin: 40px auto; border-radius: 12px; padding: 45px; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.8); }
+    .close-modal { position: absolute; top: 20px; right: 25px; color: var(--text-muted); font-size: 2.2rem; cursor: pointer; transition: var(--transition); line-height: 1; }
     .close-modal:hover { color: var(--primary); }
-    .modal-header { border-bottom: 1px solid var(--border-color); padding-bottom: 20px; margin-bottom: 30px; }
-    .modal-title { font-family: var(--font-title); font-size: 2.2rem; color: var(--primary); }
-    .modal-subtitle { color: var(--text-muted); font-size: 0.9rem; margin-top: 5px; }
-    .modal-body img { width: 100%; height: 350px; object-fit: cover; border-radius: 6px; margin-bottom: 25px; }
-    .day-item { background-color: var(--dark); border-left: 3px solid var(--primary); padding: 20px; border-radius: 0 6px 6px 0; margin-bottom: 15px; }
-    .day-item h4 { font-family: var(--font-title); font-size: 1.2rem; color: #fff; margin-bottom: 8px; }
-    .day-item p { color: var(--text-muted); font-size: 0.9rem; }
-    .modal-footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+    .modal-header { border-bottom: 1px solid var(--border-color); padding-bottom: 25px; margin-bottom: 30px; }
+    .modal-title { font-family: var(--font-title); font-size: 2.4rem; color: var(--primary); margin-bottom: 5px; }
+    .modal-subtitle { color: var(--accent); font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+    .modal-body img { width: 100%; height: 380px; object-fit: cover; border-radius: 8px; margin-bottom: 30px; border: 1px solid var(--border-color); }
+    .day-item { background-color: var(--dark-card); border-left: 4px solid var(--primary); padding: 22px; border-radius: 0 8px 8px 0; margin-bottom: 18px; border-top: 1px solid var(--border-color); border-right: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+    .day-item h4 { font-family: var(--font-title); font-size: 1.3rem; color: #fff; margin-bottom: 10px; }
+    .day-item p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+    .modal-footer { margin-top: 35px; padding-top: 25px; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
 
-    /* RESPONSIVE */
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 992px) {
+      .hero h1 { font-size: 3.2rem; }
+      .intro-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
     @media (max-width: 768px) {
-      .navigation { display: none; position: absolute; top: 80px; left: 0; width: 100%; background-color: var(--dark); flex-direction: column; padding: 20px; border-bottom: 1px solid var(--border-color); }
+      .navigation { display: none; position: absolute; top: 90px; left: 0; width: 100%; background-color: var(--dark); flex-direction: column; padding: 30px; border-bottom: 1px solid var(--border-color); }
       .navigation.active { display: flex; }
       .menu-toggle { display: block; }
       .nav-whatsapp { display: none; }
-      .intro-grid, .about-grid, .contact-grid, .footer-grid { grid-template-columns: 1fr; }
       .hero h1 { font-size: 2.5rem; }
-      .modal-content { padding: 20px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+      .modal-content { padding: 25px; }
+      .modal-title { font-size: 1.8rem; }
     }
   </style>
 </head>
@@ -217,10 +242,10 @@
   <div class="hero-overlay"></div>
   <div class="container hero-content">
     <p class="hero-small">BIENVENUE DANS LE SAHARA MAROCAIN</p>
-    <h1>Vivez l'expérience <span>du désert de Merzouga</span></h1>
-    <p class="hero-text">Découvrez les magnifiques dunes de l'Erg Chebbi, les bivouacs de luxe et les traditions du Sahara marocain à travers des circuits privés et authentiques.</p>
+    <h1>Vivez la magie <span>du désert de Merzouga</span></h1>
+    <p class="hero-text">Sillonnez les mythiques dunes de l'Erg Chebbi, séjournez dans des bivouacs de haut standing et découvrez les plus beaux trésors du Sud marocain.</p>
     <div class="hero-buttons">
-      <a href="#circuits" class="btn btn-primary">Découvrir nos circuits</a>
+      <a href="#circuits" class="btn btn-primary">Explorer nos circuits</a>
       <a href="https://wa.me/212669486946?text=Bonjour%20DESERT%20MERZOUGA%2C%20je%20souhaite%20avoir%20plus%20d'informations%20sur%20vos%20circuits." target="_blank" class="btn btn-outline">Réserver sur WhatsApp</a>
     </div>
   </div>
@@ -231,12 +256,12 @@
 <section class="intro section">
   <div class="container intro-grid">
     <div>
-      <p class="section-label">DESERT MERZOUGA</p>
-      <h2>Une expérience authentique au cœur du Sahara</h2>
+      <p class="section-label">L'EXCELLENCE SAHARIENNE</p>
+      <h2>Une aventure authentique au cœur des dunes</h2>
     </div>
     <div>
-      <p>Partez à la découverte du désert de Merzouga et des célèbres dunes de l'Erg Chebbi.</p>
-      <p>Nous proposons des circuits privés, des excursions, des balades à dos de dromadaire et des nuits dans des camps confortables au cœur du Sahara.</p>
+      <p>Partez à la rencontre des paysages grandioses de Merzouga et laissez-vous porter par la magie du désert.</p>
+      <p>Nos circuits sur-mesure et nos bivouacs raffinés associent confort moderne, convivialité berbere et émerveillement total.</p>
     </div>
   </div>
 </section>
@@ -246,9 +271,9 @@
 <section class="section circuits" id="circuits">
   <div class="container">
     <div class="section-heading">
-      <p class="section-label">NOS CIRCUITS</p>
-      <h2>Découvrez le Maroc autrement</h2>
-      <p>Des itinéraires soigneusement organisés pour découvrir les paysages et la culture du sud marocain.</p>
+      <p class="section-label">NOS CIRCUITS SIGNATURE</p>
+      <h2>Voyages d'exception au Maroc</h2>
+      <p>Des itinéraires d'exception conçus pour vous révéler les gorges, kasbahs et oasis du Sahara.</p>
     </div>
 
     <div class="cards">
@@ -257,10 +282,10 @@
         <div class="card-image image1"><span>3 JOURS</span></div>
         <div class="card-content">
           <p class="card-location">Marrakech → Merzouga</p>
-          <h3>Circuit désert de 3 jours</h3>
-          <p>Découvrez Aït Ben Haddou, les gorges du Dadès, les gorges du Todra et les dunes de Merzouga.</p>
-          <div class="card-info"><span>3 jours</span><span>Privé</span></div>
-          <span class="card-link" onclick="openCircuitModal(1)">Voir le circuit →</span>
+          <h3>Circuit Désert & Kasbahs</h3>
+          <p>Explorez la Kasbah Aït Ben Haddou, les gorges du Dadès, Todra et terminez en beauté sur les dromadaires à Merzouga.</p>
+          <div class="card-info"><span>3 Jours / 2 Nuits</span><span>Circuit Privé</span></div>
+          <span class="card-link" onclick="openCircuitModal(1)">Voir le détail →</span>
         </div>
       </article>
 
@@ -269,10 +294,10 @@
         <div class="card-image image2"><span>4 JOURS</span></div>
         <div class="card-content">
           <p class="card-location">Marrakech → Merzouga</p>
-          <h3>Grand circuit du désert</h3>
-          <p>Un voyage plus complet à travers les montagnes, les vallées, les kasbahs et le Sahara.</p>
-          <div class="card-info"><span>4 jours</span><span>Privé</span></div>
-          <span class="card-link" onclick="openCircuitModal(2)">Voir le circuit →</span>
+          <h3>Grand Circuit du Sahara</h3>
+          <p>Une traversée complète intégrant la vallée du Draa, Ouarzazate, Rissani et une nuit inoubliable sous les étoiles.</p>
+          <div class="card-info"><span>4 Jours / 3 Nuits</span><span>Circuit Privé</span></div>
+          <span class="card-link" onclick="openCircuitModal(2)">Voir le détail →</span>
         </div>
       </article>
 
@@ -281,22 +306,22 @@
         <div class="card-image image3"><span>3 JOURS</span></div>
         <div class="card-content">
           <p class="card-location">Fès → Merzouga</p>
-          <h3>Fès et désert de Merzouga</h3>
-          <p>Voyagez de Fès vers les dunes de l'Erg Chebbi et découvrez une autre facette du Maroc.</p>
-          <div class="card-info"><span>3 jours</span><span>Privé</span></div>
-          <span class="card-link" onclick="openCircuitModal(3)">Voir le circuit →</span>
+          <h3>De la Capitale Culturelle au Désert</h3>
+          <p>Traversez le Moyen-Atlas, la forêt de cèdres d'Ifrane et la majestueuse vallée du Ziz avant de rallier Erg Chebbi.</p>
+          <div class="card-info"><span>3 Jours / 2 Nuits</span><span>Circuit Privé</span></div>
+          <span class="card-link" onclick="openCircuitModal(3)">Voir le détail →</span>
         </div>
       </article>
 
       <!-- CIRCUIT 4 -->
       <article class="card">
-        <div class="card-image image4"><span>SUR MESURE</span></div>
+        <div class="card-image image4"><span>SUR-MESURE</span></div>
         <div class="card-content">
-          <p class="card-location">Maroc</p>
-          <h3>Circuit personnalisé</h3>
-          <p>Vous avez un itinéraire particulier ? Créons ensemble votre voyage dans le désert.</p>
-          <div class="card-info"><span>Flexible</span><span>Privé</span></div>
-          <span class="card-link" onclick="openCircuitModal(4)">Voir le circuit →</span>
+          <p class="card-location">Partout au Maroc</p>
+          <h3>Circuit Personnalisé</h3>
+          <p>Un itinéraire 100% à la carte rédigé selon vos villes de départ, votre rythme et vos aspirations de voyage.</p>
+          <div class="card-info"><span>Durée Flexible</span><span>Prestation Luxe</span></div>
+          <span class="card-link" onclick="openCircuitModal(4)">Créer mon voyage →</span>
         </div>
       </article>
     </div>
@@ -308,29 +333,29 @@
 <section class="section experiences" id="experiences">
   <div class="container">
     <div class="section-heading">
-      <p class="section-label">NOS EXPÉRIENCES</p>
-      <h2>Le désert, autrement</h2>
+      <p class="section-label">DES MOMENTS INOUBLIABLES</p>
+      <h2>Nos expériences immersives</h2>
     </div>
     <div class="experience-grid">
       <div class="experience">
-        <div class="experience-icon">🐪</div>
-        <h3>Balade à dromadaire</h3>
-        <p>Traversez les dunes de Merzouga au rythme des dromadaires et profitez du coucher du soleil.</p>
+        <span class="experience-icon">🐪</span>
+        <h3>Méharée à dromadaire</h3>
+        <p>Silencieuse traversée des dunes dorées au rythme caravanier pour un coucher de soleil mémorable.</p>
       </div>
       <div class="experience">
-        <div class="experience-icon">⛺</div>
-        <h3>Nuit dans le désert</h3>
-        <p>Passez une nuit dans un camp confortable au milieu des dunes de l'Erg Chebbi.</p>
+        <span class="experience-icon">⛺</span>
+        <h3>Bivouac de prestige</h3>
+        <p>Tentes de luxe climatisées avec salle de bain privée au cœur du désert le plus absolu.</p>
       </div>
       <div class="experience">
-        <div class="experience-icon">🌅</div>
-        <h3>Coucher de soleil</h3>
-        <p>Admirez les couleurs du Sahara lorsque le soleil disparaît derrière les dunes.</p>
+        <span class="experience-icon">🌅</span>
+        <h3>Crépuscule saharien</h3>
+        <p>Un spectacle chromatique fascinant lorsque la lumière décline sur l'Erg Chebbi.</p>
       </div>
       <div class="experience">
-        <div class="experience-icon">✨</div>
-        <h3>Observation des étoiles</h3>
-        <p>Découvrez un ciel exceptionnel loin des lumières des villes.</p>
+        <span class="experience-icon">✨</span>
+        <h3>Nuit sous les étoiles</h3>
+        <p>Une pureté de ciel inégalée pour observer la voie lactée au son des musiques berbères.</p>
       </div>
     </div>
   </div>
@@ -341,10 +366,10 @@
 <section class="luxury-camp" id="camp">
   <div class="camp-overlay"></div>
   <div class="container camp-content">
-    <p class="section-label">BIVOUAC DE LUXE</p>
-    <h2>Dormez sous les étoiles</h2>
-    <p>Une nuit exceptionnelle au cœur des dunes, dans une tente confortable inspirée de l'hospitalité traditionnelle marocaine.</p>
-    <a href="https://wa.me/212669486946?text=Bonjour%20DESERT%20MERZOUGA%2C%20je%20souhaite%20avoir%20des%20informations%20sur%20le%20camp%20de%20luxe." target="_blank" class="btn btn-primary">Découvrir le camp</a>
+    <p class="section-label">EXPÉRIENCE BIVOUAC PREMIUM</p>
+    <h2>L'Élégance au cœur du désert</h2>
+    <p>Savourez un dîner gastronomique traditionnel et détendez-vous dans des suites berbères raffinées sous la voûte céleste.</p>
+    <a href="https://wa.me/212669486946?text=Bonjour%20DESERT%20MERZOUGA%2C%20je%20souhaite%20des%20informations%20sur%20votre%20campement%20de%20luxe." target="_blank" class="btn btn-primary">Réserver le camp</a>
   </div>
 </section>
 
@@ -353,14 +378,30 @@
 <section class="section why">
   <div class="container">
     <div class="section-heading">
-      <p class="section-label">POURQUOI NOUS CHOISIR</p>
-      <h2>Votre voyage dans le Sahara</h2>
+      <p class="section-label">ENGAGEMENT & QUALITÉ</p>
+      <h2>Pourquoi choisir Desert Merzouga ?</h2>
     </div>
     <div class="why-grid">
-      <div><strong>01</strong><h3>Expérience locale</h3><p>Découvrez le désert accompagné par des personnes qui connaissent parfaitement la région.</p></div>
-      <div><strong>02</strong><h3>Circuits privés</h3><p>Profitez d'un voyage adapté à votre rythme et à vos envies.</p></div>
-      <div><strong>03</strong><h3>Hospitalité marocaine</h3><p>Une expérience basée sur l'accueil, la découverte et le partage.</p></div>
-      <div><strong>04</strong><h3>Assistance</h3><p>Nous restons disponibles avant et pendant votre voyage pour répondre à vos questions.</p></div>
+      <div class="why-grid-item">
+        <strong>01</strong>
+        <h3>Guides locaux natifs</h3>
+        <p>Une parfaite connaissance du Sahara transmise par des hôtes passionnés et bienveillants.</p>
+      </div>
+      <div class="why-grid-item">
+        <strong>02</strong>
+        <h3>Circuits 100% privés</h3>
+        <p>Flotte de véhicules SUV 4x4 et Minivans récents pour un confort et une intimité garantis.</p>
+      </div>
+      <div class="why-grid-item">
+        <strong>03</strong>
+        <h3>Hospitalité d'exception</h3>
+        <p>Un accueil chaleureux dans le respect des traditions et du standing hôtelier haut de gamme.</p>
+      </div>
+      <div class="why-grid-item">
+        <strong>04</strong>
+        <h3>Assistance 24/7</h3>
+        <p>Un conseiller dédié à votre disposition à chaque étape de votre séjour au Maroc.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -369,7 +410,10 @@
 <!-- ================= GALERIE ================= -->
 <section class="section gallery-section" id="galerie">
   <div class="container">
-    <div class="section-heading"><p class="section-label">GALERIE</p><h2>Quelques moments du Sahara</h2></div>
+    <div class="section-heading">
+      <p class="section-label">EN IMAGES</p>
+      <h2>Galerie de nos voyageurs</h2>
+    </div>
     <div class="gallery">
       <div class="gallery-item gallery1"></div>
       <div class="gallery-item gallery2"></div>
@@ -388,10 +432,10 @@
     <div class="about-image"></div>
     <div class="about-text">
       <p class="section-label">À PROPOS DE NOUS</p>
-      <h2>Bienvenue à Merzouga</h2>
-      <p>DESERT MERZOUGA vous accompagne dans la découverte du Sahara marocain et de la région de Merzouga.</p>
-      <p>Notre objectif est de proposer des expériences authentiques, confortables et adaptées aux voyageurs qui souhaitent découvrir le désert autrement.</p>
-      <a href="#contact" class="btn btn-dark">Nous contacter</a>
+      <h2>Créateurs de souvenirs dans le Sud Marocain</h2>
+      <p>Spécialiste reconnu des excursions et circuits sahariens, DESERT MERZOUGA orchestre vos voyages sur-mesure dans tout le royaume.</p>
+      <p>Notre engagement est de vous offrir une immersion authentique, sécurisée et inoubliable loin du tourisme de masse.</p>
+      <a href="#contact" class="btn btn-dark">Nous Contacter</a>
     </div>
   </div>
 </section>
@@ -400,23 +444,26 @@
 <!-- ================= FAQ ================= -->
 <section class="section faq">
   <div class="container">
-    <div class="section-heading"><p class="section-label">FAQ</p><h2>Questions fréquentes</h2></div>
+    <div class="section-heading">
+      <p class="section-label">FOIRE AUX QUESTIONS</p>
+      <h2>Vos questions fréquentes</h2>
+    </div>
     <div class="faq-list">
       <details>
-        <summary>Comment réserver un circuit ?</summary>
-        <p>Contactez-nous directement par WhatsApp afin de connaître les disponibilités et organiser votre voyage.</p>
+        <summary>Comment s'effectue la réservation de notre circuit ?</summary>
+        <p>Il vous suffit de nous contacter directement sur WhatsApp ou par e-mail. Nous validerons ensemble l'itinéraire et les dates souhaitées.</p>
       </details>
       <details>
-        <summary>Les circuits sont-ils privés ?</summary>
-        <p>Nous proposons des circuits privés et pouvons également adapter l'itinéraire à votre groupe.</p>
+        <summary>Les repas et hébergements sont-ils inclus ?</summary>
+        <p>Oui, nos prestations incluent la demi-pension (petits-déjeuners et dîners), les transports privés ainsi que l'hébergement en hôtel et bivouac.</p>
       </details>
       <details>
-        <summary>Puis-je personnaliser mon voyage ?</summary>
-        <p>Oui. Vous pouvez nous contacter pour demander un itinéraire personnalisé.</p>
+        <summary>Puis-je adapter un circuit selon mes souhaits ?</summary>
+        <p>Absolument ! Tous nos circuits sont privatifs et entièrement personnalisables selon vos envies et vos contraintes horaires.</p>
       </details>
       <details>
-        <summary>Comment contacter DESERT MERZOUGA ?</summary>
-        <p>Vous pouvez nous contacter directement par WhatsApp ou par email.</p>
+        <summary>Quel équipement prévoir pour le désert ?</summary>
+        <p>Prévoyez des vêtements confortables, une veste chaude pour les soirées en désert, des lunettes de soleil et une protection solaire.</p>
       </details>
     </div>
   </div>
@@ -427,17 +474,17 @@
 <section class="contact" id="contact">
   <div class="container contact-grid">
     <div>
-      <p class="section-label">CONTACT</p>
-      <h2>Préparez votre aventure dans le désert</h2>
-      <p>Vous avez une question ou souhaitez organiser un circuit ? Contactez-nous directement.</p>
+      <p class="section-label">DISCUTONS DE VOTRE PROJET</p>
+      <h2>Planifions votre voyage</h2>
+      <p>Une question ? Une envie particulière ? Envoyez-nous un message et nous vous répondrons dans les plus brefs délais.</p>
     </div>
     <div class="contact-box">
       <a href="https://wa.me/212669486946" target="_blank">
-        <span>WhatsApp</span>
+        <span>Réservation Directe WhatsApp</span>
         <strong>+212 669 486 946</strong>
       </a>
       <a href="mailto:mbenhssain@enameknes.ac.ma">
-        <span>Email</span>
+        <span>Demande de devis par Email</span>
         <strong>mbenhssain@enameknes.ac.ma</strong>
       </a>
     </div>
@@ -450,19 +497,19 @@
   <div class="container footer-grid">
     <div>
       <a href="#accueil" class="footer-logo">DESERT MERZOUGA</a>
-      <p style="color: var(--text-muted); margin-top: 10px;">Luxury Desert Tours & Experiences</p>
+      <p style="color: var(--text-muted); margin-top: 15px; max-width: 300px;">Organisateur de circuits privés et bivouacs de luxe à Merzouga & dans le Sud Marocain.</p>
     </div>
     <div>
       <h4>Navigation</h4>
-      <a href="#circuits">Circuits</a>
+      <a href="#circuits">Nos Circuits</a>
       <a href="#experiences">Expériences</a>
-      <a href="#camp">Camp de luxe</a>
-      <a href="#contact">Contact</a>
+      <a href="#camp">Bivouac de luxe</a>
+      <a href="#contact">Contact & Devis</a>
     </div>
     <div>
-      <h4>Contact</h4>
-      <a href="https://wa.me/212669486946" target="_blank">WhatsApp</a>
-      <a href="mailto:mbenhssain@enameknes.ac.ma">Email</a>
+      <h4>Contact Direct</h4>
+      <a href="https://wa.me/212669486946" target="_blank">WhatsApp : +212 669 486 946</a>
+      <a href="mailto:mbenhssain@enameknes.ac.ma">mbenhssain@enameknes.ac.ma</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -471,13 +518,13 @@
 </footer>
 
 
-<!-- ================= WHATSAPP FLOAT ================= -->
+<!-- ================= BOUTON WHATSAPP FLOTTANT ================= -->
 <a class="whatsapp-float" href="https://wa.me/212669486946?text=Bonjour%20DESERT%20MERZOUGA%2C%20je%20souhaite%20avoir%20des%20informations%20sur%20vos%20circuits." target="_blank" aria-label="WhatsApp">
-  WhatsApp
+  <span>💬 Contact WhatsApp</span>
 </a>
 
 
-<!-- ================= MODALE DES DÉTAILS DE CIRCUIT ================= -->
+<!-- ================= MODALE CIRCUIT DÉTAILLÉ ================= -->
 <div class="modal" id="circuitModal">
   <div class="modal-content">
     <span class="close-modal" onclick="closeCircuitModal()">&times;</span>
@@ -486,80 +533,79 @@
       <p class="modal-subtitle" id="modalSubtitle">Itinéraire Détaillé</p>
     </div>
     <div class="modal-body" id="modalBody">
-      <!-- Le contenu dynamique du circuit sera injecté ici par JS -->
+      <!-- Injected by JavaScript -->
     </div>
     <div class="modal-footer">
-      <span style="color: var(--primary); font-weight: 600;" id="modalPrice">Circuits Privés Sur Devis</span>
+      <span style="color: var(--primary); font-weight: 700; font-size: 1.1rem;" id="modalPrice">Circuits Privés Sur Devis</span>
       <a href="#" id="modalWaBtn" target="_blank" class="btn btn-primary">Réserver sur WhatsApp</a>
     </div>
   </div>
 </div>
 
 
-<!-- ================= SCRIPT JAVASCRIPT ================= -->
+<!-- ================= JAVASCRIPT ================= -->
 <script>
-  // Dynamic Data for all Circuits
   const circuitsData = {
     1: {
-      title: "Circuit désert de 3 jours",
+      title: "Circuit Désert & Kasbahs (3 Jours)",
       subtitle: "Marrakech → Aït Ben Haddou → Dadès → Merzouga",
       image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=80",
       days: [
-        { day: "Jour 1", title: "Marrakech — Haut Atlas — Aït Ben Haddou — Vallée du Dadès", desc: "Départ le matin de votre hôtel à Marrakech. Traversez les magnifiques paysages du col Tizi n'Tichka, découvrez la célèbre Kasbah Aït Ben Haddou (UNESCO) et passez la nuit dans la vallée du Dadès." },
-        { day: "Jour 2", title: "Vallée du Dadès — Gorges du Todra — Merzouga (Bivouac)", desc: "Excursion dans les majestueuses gorges du Todra, puis route vers les dunes de l'Erg Chebbi à Merzouga. Arrivée en fin d'après-midi, balade à dos de dromadaire pour atteindre votre campement de luxe et soirée festive sous le ciel étoilé." },
-        { day: "Jour 3", title: "Merzouga — Vallée du Ziz — Ouarzazate — Marrakech", desc: "Réveil matinal pour adimrer le coucher/lever de soleil sur les dunes. Petit-déjeuner traditionnel au camp, puis retour vers Marrakech via la vallée du Ziz et Ouarzazate." }
+        { day: "Jour 1", title: "Marrakech — Haut Atlas — Aït Ben Haddou — Vallée du Dadès", desc: "Départ matinal via le col de Tizi n'Tichka (2260m). Visite guidée de la célèbre Kasbah Aït Ben Haddou (Patrimoine UNESCO), passage par Ouarzazate et nuit dans une charmante maison d'hôtes au cœur du Dadès." },
+        { day: "Jour 2", title: "Vallée du Dadès — Gorges du Todra — Merzouga (Bivouac Luxe)", desc: "Découverte des impressionnantes gorges du Todra, continuation vers Erfoud. Arrivée à Merzouga en fin d'après-midi pour la traversée des dunes à dromadaire. Dîner gastronomique et nuit en bivouac de luxe." },
+        { day: "Jour 3", title: "Merzouga — Vallée du Ziz — Ouarzazate — Marrakech", desc: "Lever de soleil spectaculaire sur l'Erg Chebbi. Petit-déjeuner continental au campement puis route du retour à travers la vallée du Ziz et les paysages de l'Atlas jusqu'à Marrakech." }
       ],
-      waText: "Bonjour%20DESERT%20MERZOUGA%2C%20je%20souhaite%20réserver%20le%20circuit%20de%203%20jours%20Marrakech-Merzouga."
+      waText: "Bonjour%20DESERT%20MERZOUGA%2C%20je%20souhaite%20réserver%20le%20circuit%203%20jours%20Marrakech-Merzouga."
     },
     2: {
-      title: "Grand circuit du désert (4 jours)",
+      title: "Grand Circuit du Sahara (4 Jours)",
       subtitle: "Marrakech → Ouarzazate → Vallée du Draa → Merzouga → Dadès",
       image: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1000&q=80",
       days: [
-        { day: "Jour 1", title: "Marrakech — Tizi n'Tichka — Ouarzazate — Vallée du Draa", desc: "Départ de Marrakech à travers l'Atlas. Visite des studios de cinéma de Ouarzazate et continuation le long de la magnifique vallée du Draa avec ses milliers de palmiers." },
-        { day: "Jour 2", title: "Vallée du Draa — Rissani — Merzouga (Nuit dans le désert)", desc: "Découverte des souks de Rissani, berceau de la dynastie Alaouite, puis arrivée aux dunes spectaculaires de l'Erg Chebbi. Soirée musicale autour du feu et nuit en bivouac." },
-        { day: "Jour 3", title: "Merzouga — Erfoud — Gorges du Todra — Vallée du Dadès", desc: "Exploration des fossiles d'Erfoud et balade au cœur des imposantes falaises du Todra. Dîner et nuit dans un hôtel de charme au Dadès." },
-        { day: "Jour 4", title: "Vallée du Dadès — Vallée des Roses — Ouarzazate — Marrakech", desc: "Traversée de la vallée des Roses et de la palmeraie de Skoura. Retour serein vers Marrakech en fin d'après-midi." }
+        { day: "Jour 1", title: "Marrakech — Col Tichka — Ouarzazate — Vallée du Draa", desc: "Départ vers le Sud marocain. Visite du studio de cinéma de Ouarzazate et de la Kasbah Taourirt. Descente vers Agdz le long de l'immense palmeraie du Draa." },
+        { day: "Jour 2", title: "Vallée du Draa — Rissani — Merzouga (Nuit dans le désert)", desc: "Etape culturelle au marché traditionnel de Rissani. Arrivée aux dunes majestueuses de l'Erg Chebbi, promenade à dromadaire et soirée feux de camp rythmée par la musique Gnaoua." },
+        { day: "Jour 3", title: "Merzouga — Erfoud — Gorges du Todra — Vallée du Dadès", desc: "Immersion dans les gisements de fossiles d'Erfoud puis promenade rafraîchissante dans les canyons du Todra. Dîner et nuitée dans les gorges du Dadès." },
+        { day: "Jour 4", title: "Vallée du Dadès — Vallée des Roses — Skoura — Marrakech", desc: "Traversée de la route des Mille Kasbahs, arrêt dans la Vallée des Roses et retour paisible vers Marrakech en fin de journée." }
       ],
       waText: "Bonjour%20DESERT%20MERZOUGA%2C%20je%20souhaite%20réserver%20le%20Grand%20circuit%204%20jours."
     },
     3: {
-      title: "Fès et désert de Merzouga (3 jours)",
-      subtitle: "Fès → Ifrane → Forêt de Cèdres → Merzouga → Marrakech / Fès",
+      title: "De Fès au Désert de Merzouga (3 Jours)",
+      subtitle: "Fès → Ifrane → Azrou → Vallée du Ziz → Merzouga → Fès/Marrakech",
       image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1000&q=80",
       days: [
-        { day: "Jour 1", title: "Fès — Ifrane — Azrou — Vallée du Ziz — Merzouga", desc: "Départ de Fès. Passage par Ifrane (la petite Suisse du Maroc) et la forêt de cèdres d'Azrou à la rencontre des singes magots. Traversée des gorges de Ziz jusqu'aux dunes de Merzouga." },
-        { day: "Jour 2", title: "Exploration du Désert & Nuit en Bivouac de Luxe", desc: "Journée consacrée à la découverte du désert : visite du village des gnaouas (Khamlia), thé avec les nomades et excursion 4x4. En fin de journée, promenade à dos de dromadaire et nuit au camp." },
-        { day: "Jour 3", title: "Merzouga — Rissani — Midelt — Fès (ou Marrakech)", desc: "Petit-déjeuner au milieu des dunes, puis route de retour vers Fès ou poursuite vers Marrakech selon votre souhait." }
+        { day: "Jour 1", title: "Fès — Ifrane — Forêt d'Azrou — Midelt — Merzouga", desc: "Départ de la capitale spirituelle Fès. Passage par Ifrane et les forêts de cèdres peuplées de singes magots. Traversée du Moyen-Atlas et arrivée magique à Merzouga." },
+        { day: "Jour 2", title: "Exploration Nomade & Nuit en Campement de Luxe", desc: "Journée 4x4 à la découverte des nomades du désert, visite du village de Khamlia (musique Gnaoua). En fin de journée, coucher de soleil et nuit en tente nomade de standing." },
+        { day: "Jour 3", title: "Merzouga — Vallée du Ziz — Fès (ou Marrakech)", desc: "Petit-déjeuner saharien puis route du retour avec des panoramas saisissants sur les palmeraies et montagnes de l'Atlas." }
       ],
       waText: "Bonjour%20DESERT%20MERZOUGA%2C%20je%20souhaite%20réserver%20le%20circuit%20Fès-Merzouga."
     },
     4: {
-      title: "Circuit Personnalisé & Sur-Mesure",
-      subtitle: "Concevez le voyage de vos rêves à travers le Maroc",
+      title: "Circuit Personnalisé Sur-Mesure",
+      subtitle: "Concevez votre voyage idéal à travers le Maroc",
       image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80",
       days: [
-        { day: "Sur-Mesure", title: "Un itinéraire 100% adaptable", desc: "Vous choisissez vos villes de départ et d'arrivée (Marrakech, Fès, Casablanca, Agadir, Tangier...). Nous adaptons la durée, les étapes et le niveau de confort selon vos préférences." },
-        { day: "Services Inclus", title: "Véhicule Privé avec Chauffeur Dédié", desc: "Transport haut de gamme (4x4 ou Minivan récents et climatisés), guides locaux diplômés et conciergerie disponible tout au long de votre séjour." }
+        { day: "Sur-Mesure", title: "Itinéraire flexible et 100% à la carte", desc: "Nous façonnons votre périple au départ de Marrakech, Fès, Casablanca, Tanger ou Agadir selon la durée et les étapes de votre choix." },
+        { day: "Confort Luxe", title: "Transport VIP & Hébergements d'exception", desc: "Véhicules 4x4 tout confort, chauffeurs-guides francophones expérimentés et réservation des meilleurs Riads & bivouacs du pays." }
       ],
-      waText: "Bonjour%20DESERT%20MERZOUGA%2C%20je%20souhaite%20créer%20un%20circuit%20sur%20mesure."
+      waText: "Bonjour%20DESERT%20MERZOUGA%2C%20je%20souhaite%20créer%20un%20circuit%20sur-mesure."
     }
   };
 
-  // Header scroll effect
+  // Header Scroll Effect
   const header = document.getElementById('header');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) header.classList.add('scrolled');
     else header.classList.remove('scrolled');
   });
 
-  // Mobile menu toggle
+  // Mobile Menu Toggle
   const menuToggle = document.getElementById('menuToggle');
   const navigation = document.getElementById('navigation');
   menuToggle.addEventListener('click', () => navigation.classList.toggle('active'));
   document.querySelectorAll('.navigation a').forEach(l => l.addEventListener('click', () => navigation.classList.remove('active')));
 
-  // Modal logic
+  // Modal Functions
   const modal = document.getElementById('circuitModal');
   function openCircuitModal(id) {
     const data = circuitsData[id];
